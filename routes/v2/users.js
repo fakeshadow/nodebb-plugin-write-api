@@ -13,7 +13,7 @@ var Users = require.main.require('./src/user'),
 module.exports = function(/*middleware*/) {
 	var app = require('express').Router();
 
-	app.post('/', apiMiddleware.requireUser, apiMiddleware.requireAdmin, function(req, res) {
+	app.post('/', function(req, res) {
 		if (!utils.checkRequired(['username'], req, res)) {
 			return false;
 		}
